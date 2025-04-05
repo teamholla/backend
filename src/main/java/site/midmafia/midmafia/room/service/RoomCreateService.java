@@ -1,6 +1,5 @@
 package site.midmafia.midmafia.room.service;
 
-import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,8 +21,6 @@ public class RoomCreateService {
 
         roomRepository.save(room);
 
-        String code = String.valueOf(Objects.hashCode(room.getId()));
-
-        return RoomCreateServiceResponse.of(room, code);
+        return RoomCreateServiceResponse.of(room);
     }
 }

@@ -27,20 +27,6 @@ public class RoomCreateServiceTest {
     }
 
     @Test
-    @DisplayName("방 생성 시 해시 코드를 생성한다.")
-    void generate_hash_code_when_create_room() {
-        // given
-        RoomCreateServiceRequest request = new RoomCreateServiceRequest("name", 10);
-
-        // when
-        RoomCreateServiceResponse response = roomCreateService.create(request);
-
-        // then
-        Assertions.assertThat(response.code())
-                .isNotEmpty();
-    }
-
-    @Test
     @DisplayName("방 생성 시 방이 생성된다.")
     void create_room_when_create_room() {
         // given
