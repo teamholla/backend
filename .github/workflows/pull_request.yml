@@ -35,9 +35,9 @@ jobs:
         with:
           webhookUrl: ${{ env.DISCORD_WEBHOOK_URL }}
           message: |
-            👑${{steps.extract_receiver_list.outputs.requester}}👑 PR이 도착했습니다. 
+            ${{steps.extract_receiver_list.outputs.requester}} PR이 도착했습니다. 
             ↓↓↓
             
-            *[${{steps.extract_receiver_list.outputs.requester}}](${{github.event.pull_request.html_url}})* 
+            *[${{github.event.pull_request.title}}](${{github.event.pull_request.html_url}})* 
 
             _리뷰할 사람: ${{steps.extract_receiver_list.outputs.names}}_
